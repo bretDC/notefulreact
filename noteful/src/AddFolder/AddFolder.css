@@ -1,0 +1,36 @@
+.add-folder-header {
+    color: #cacaca;
+    padding: 10px;
+}
+
+.add-folder-form {
+    background-color: #102541;
+    color: #cacaca;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 500px;
+    padding: 10px;
+}
+
+.add-folder-form > * {
+    margin: 10px;
+}
+
+.add-folder-form p {
+    color: red;
+    font-size: 1em;
+}
+
+.add-folder-form input {
+    height: 25px;
+}
+
+.add-folder-form button {
+    width: 100px;
+    height: 25px;
+    background-color: #cacaca;
+    color: #102541;
+    font-size: 1em;
+}

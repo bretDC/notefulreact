@@ -6,6 +6,7 @@ import CircleButton from '../CircleButton/CircleButton'
 import ApiContext from '../ApiContext'
 import { getNotesForFolder } from '../notes-helpers'
 import './NoteListMain.css'
+import PropTypes from 'prop-types'
 
 export default class NoteListMain extends React.Component {
   static defaultProps = {
@@ -21,17 +22,6 @@ export default class NoteListMain extends React.Component {
     const notesForFolder = getNotesForFolder(notes, folderId)
     return (
       <section className='NoteListMain'>
-        <ul>
-          {notesForFolder.map(note =>
-            <li key={note.id}>
-              <Note
-                id={note.id}
-                name={note.name}
-                modified={note.modified}
-              />
-            </li>
-          )}
-        </ul>
         <div className='NoteListMain__button-container'>
           <CircleButton
             tag={Link}
@@ -44,7 +34,23 @@ export default class NoteListMain extends React.Component {
             Note
           </CircleButton>
         </div>
+        <ul>
+          {notesForFolder.map(note =>
+            <li key={note.id}>
+              <Note
+                id={note.id}
+                name={note.name}
+                modified={note.modified}
+                onDeleteNote={this.onDeleteNote}
+              />
+            </li>
+          )}
+        </ul>
       </section>
     )
   }
+}
+
+NoteListMain.propTypes = {
+  match: PropTypes.object
 }
