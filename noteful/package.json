@@ -11,6 +11,7 @@
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
+    "vercel": "^21.0.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
@@ -18,6 +19,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "predeploy":"npm run build",
+    "deploy": "vercel --prod",
     "serve": "serve -s build",
     "preserve": "npm run build"
   },
